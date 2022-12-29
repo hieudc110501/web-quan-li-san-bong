@@ -35,8 +35,7 @@ class DichVuController extends Controller
     //delete dich vu
     public function delete_dichvu($id) {
         $del = DB::table('dichvu')->where('MaDichVu', $id)->delete();
-        $getDV = DB::table('dichvu')->get();
-        return view('dichvu.index')->with(compact('getDV'));
+        return response()->json(true, 200);
     }
 
     //get dichvu by id

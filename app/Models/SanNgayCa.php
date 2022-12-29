@@ -14,6 +14,6 @@ class SanNgayCa extends Model
         'MaSanCa',
         'MaChiTietDD',
         'NgayThangNam',
-        'TinhTrang',
+        'TinhTrangSNC',
     ];
 }

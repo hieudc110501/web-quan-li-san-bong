@@ -52,10 +52,10 @@ class DatSanController extends Controller
                 foreach(session('cart') as $c) {
                     DB::table('sanngayca')
                     ->where('MaSanNgayCa', $c['MaSanNgayCa'])
-                    ->update(['MaChiTietDD'=> $id_ctdd, 'TinhTrang' => 1]);
+                    ->update(['MaChiTietDD'=> $id_ctdd, 'TinhTrangSNC' => 1]);
                 }
                 $cart->clear();
-                return redirect()->back();
+                return redirect()->back()->with('success', 1);
             }
         }
     }

@@ -23,7 +23,6 @@ class SanNgayCaController extends Controller
         // ->whereMonth('NgayThangNam','>=', $month)
         // ->whereYear('NgayThangNam', '>=', $year)
         ->get();
-
         return view('sanngayca.index')->with(compact('getSNC'));
     }
 

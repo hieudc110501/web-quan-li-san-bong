@@ -23,7 +23,7 @@ class RegisterController extends Controller
             $new_user['TenTaiKhoan'] = $request->account;
             $new_user['MatKhau'] =bcrypt($request->password);
             $new_user['Ten'] = $request->name;
-            $new_user['VaiTro'] = $request->role;
+            $new_user['VaiTro'] = 2;
             $res = User::create($new_user);
             if ($res) {
                 return redirect('/login')->with('status', 'Đăng ký thành công');

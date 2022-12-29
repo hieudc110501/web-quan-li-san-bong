@@ -16,7 +16,11 @@
         </div>
         <br>
 
-
+        @if (session('success') == 1)
+            <div class="alert alert-success">
+                Đặt sân thành công!
+            </div>
+        @endif
         <a href="{{ URL::to('/show_sanngayca') }}" class="btn btn-primary mb-4"><i class="fas fa-arrow-left"></i> Quay lại</a>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -32,7 +36,9 @@
         <form action="{{URL::to('/dat_san')}}" method="POST">
             {{ csrf_field() }}
             <input type="text" hidden name="matk"  value="{{Auth::user()->MaTaiKhoan}}">
-            <button style="margin: 10px; float: right" type="submit" class="btn btn-sm btn-primary">Đặt hàng</button>
+            @if ($cart->total_qty != 0)
+                <button style="margin: 10px; float: right" type="submit" class="btn btn-sm btn-primary">Đặt sân</button>
+            @endif
         </form>
 
         <br>
@@ -56,7 +62,8 @@
                         $('.LoadAllProductAttr').html(data);
                         $('#dataTable').DataTable().draw();
                     },
-                    error: function(jqXHR, textStatus, errorThrown) {}
+                    error: function(jqXHR, textStatus, errorThrown) {
+                    }
                 })
             });
         });

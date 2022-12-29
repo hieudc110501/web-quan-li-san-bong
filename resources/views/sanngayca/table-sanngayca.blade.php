@@ -28,15 +28,15 @@
                 <td><img width="50" height="50" src="{{asset('img/'.$dv->HinhAnh)}}"></td>
                 <td>{{$dv->MoTa}}</td>
                 <td>
-                    @if ($dv->TinhTrang == 0)
-                        <span class="badge badge-success">Còn trống</span>
+                    @if ($dv->TinhTrangSNC == 0)
+                        <span class="badge badge-success"> Còn trống</span>
                     @endif
-                    @if ($dv->TinhTrang == 1)
+                    @if ($dv->TinhTrangSNC == 1)
                         <span class="badge badge-danger">Đã hết</span>
                     @endif
                 </td>
                 <td>
-                    @if ($dv->TinhTrang == 0)
+                    @if ($dv->TinhTrangSNC == 0)
                         <a type="button" data-id="{{$dv->MaSanNgayCa}}" class="btn btn-sm btn-primary btn-add-cart" data-url="" title="Thêm"> <i class="fas fa-plus"></i></a>
                     @endif
 
